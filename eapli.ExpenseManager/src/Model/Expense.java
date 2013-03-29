@@ -6,7 +6,9 @@ package Model;
 
 import eapli.util.DateTime;
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -37,7 +39,20 @@ public class Expense {
     }
 
     public Expense(Expense exp) {
+          if(exp==null){
+                 throw new IllegalArgumentException();
+          }
         this.description = exp.description;
         this.amount = exp.amount;
     }
+    
+    @Override
+      public String toString() {
+            NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+            double doubleAmount = this.amount.doubleValue();
+            String s = "Description:" + this.description + 
+                                       "\nAmount:" + n.format(doubleAmount);
+            return s;
+
+      }
 }

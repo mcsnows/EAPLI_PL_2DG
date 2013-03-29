@@ -25,11 +25,10 @@ public class MainMenu {
                               ExpenseRegisterUI ui = new ExpenseRegisterUI();
                               ui.run();
                               break;
-                        case 2:
-                            //ExpenseRepository
-                            //ExpenseListUI ui = new ExpenseListUI();
-                            //ui.run;
-                            break;
+                       case 2:
+                              ShowExpensesUI showExpensesUI = new ShowExpensesUI();
+                              showExpensesUI.loop();
+                              break;
                   }
             } while (op != 0);
 
@@ -40,7 +39,7 @@ public class MainMenu {
             System.out.println("  EXPENSE MANAGER  ");
             System.out.println("===================\n");
             System.out.println("1. Register an expense");
-            System.out.println("2. List expenses");
+            System.out.println("2. Show expenses");
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");
