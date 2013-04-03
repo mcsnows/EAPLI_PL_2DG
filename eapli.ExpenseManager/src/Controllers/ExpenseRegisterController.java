@@ -7,6 +7,7 @@ package Controllers;
 import Model.Expense;
 import Persistence.ExpenseRepository;
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 /**
  *
@@ -16,7 +17,7 @@ public class ExpenseRegisterController {
       public ExpenseRegisterController() {
       }
 
-      public void registerExpense(String desc, Date date, BigDecimal amount) {
+      public void registerExpense(String desc, Calendar date, BigDecimal amount) {
             Expense expense = new Expense(desc, date, amount);
             ExpenseRepository controller=new ExpenseRepository();
             controller.saveExpense(expense);
