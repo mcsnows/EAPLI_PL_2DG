@@ -7,8 +7,11 @@ package Model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import Model.ExpenseType;
+import Model.PaymentMeans; //quando existir
 
 /**
  *
@@ -18,11 +21,12 @@ public class Expense {
 
     private String description;
     private BigDecimal amount;
+    private Calendar dateOcurred;
 
     protected Expense() {
     }
 
-    public Expense(String description, Date dateOccurred, BigDecimal amount) {
+    public Expense(String description, Calendar dateOccurred, BigDecimal amount) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -32,27 +36,34 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
+        this.dateOcurred = dateOcurred;
     }
+    
+    
 
+//antiga data calendar
     public Expense(String desc, int year, int month, int day, BigDecimal amount) {
-        this(desc, DateTime.newDate(year, month, day), amount);
+        this(desc, DateTime.newCalendarDate(year, month, day), amount);
     }
 
     public Expense(Expense exp) {
-          if(exp==null){
-                 throw new IllegalArgumentException();
-          }
+        if (exp == null) {
+            throw new IllegalArgumentException();
+        }
         this.description = exp.description;
         this.amount = exp.amount;
     }
-    
-    @Override
-      public String toString() {
-            NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
-            double doubleAmount = this.amount.doubleValue();
-            String s = "Description:" + this.description + 
-                                       "\nAmount:" + n.format(doubleAmount);
-            return s;
 
-      }
+    @Override
+    public String toString() {
+        NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        double doubleAmount = this.amount.doubleValue();
+        String s = "Description:" + this.description
+                + "\nAmount:" + n.format(doubleAmount);
+        return s;
+
+    }
+    public Calendar getDateOcurred() {
+        return dateOcurred;
+    }
 }
