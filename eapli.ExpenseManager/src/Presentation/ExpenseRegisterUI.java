@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import Controllers.ExpenseRegisterController;
 import Model.ExpenseType;
-import Model.PaymentMeans; //quando existir
+//import Model.PaymentMeans; //quando existir
 import java.util.Calendar;
 import java.util.List;
 /**
@@ -24,7 +24,7 @@ public class ExpenseRegisterUI {
             System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
             String desc = Console.readLine("Description:\n");
             ExpenseType expensetype = new ExpenseType("CC");
-            PaymentMeans paymentmeans = new PaymentMeans("null"); //objecto do tipo Payment Means
+           // PaymentMeans paymentmeans = new PaymentMeans("null"); //objecto do tipo Payment Means
             Calendar date = Calendar.getInstance(); // Date do tipo Calendar?
            // Date date = Console.readDate("When (dd-MM-yyyy):"); ANTIGA DATA
             double value = Console.readDouble("Amount:\n");
@@ -35,7 +35,7 @@ public class ExpenseRegisterUI {
             controller.registerExpense(desc, date, amount);
             
             displayListExpenseType(controller.getExpenseTypes());
-//            controller.getPayentMeans();
+            //controller.getPayentMeans();
 
             System.out.println("Expense recorded. \n");
       }
@@ -50,12 +50,12 @@ public class ExpenseRegisterUI {
             }
       }
       
-      private void displayListPaymentMeans(List<PaymentMeans> list) {
-            int i=0;
-            System.out.println("List of Payment Means \n");
-            for (PaymentMeans paymentmeans : list) {
-                  i=i+1;
-                  System.out.println("Payment Means "+i+"\n" + paymentmeans);
-            }
-      }
+//      private void displayListPaymentMeans(List<PaymentMeans> list) {
+//            int i=0;
+//            System.out.println("List of Payment Means \n");
+//            for (PaymentMeans paymentmeans : list) {
+//                  i=i+1;
+//                  System.out.println("Payment Means "+i+"\n" + paymentmeans);
+//            }
+//      }
 }
