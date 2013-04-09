@@ -25,4 +25,9 @@ public class ExpenseType {
     {
         return type;
     }
+    
+    public String toString()
+    {
+        return "Type: " + type;
+    }
 }
