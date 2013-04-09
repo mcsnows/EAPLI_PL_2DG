@@ -20,7 +20,7 @@ public class MonthExpensesUI {
         MonthExpensesController mec=new MonthExpensesController();
         List<Expense> despesas=mec.getMonthExpenses(month);
         for(int i=0;i<despesas.size();i++){
-            despesas.get(i).toString();
+            System.out.println(despesas.get(i));
         }
     }
 }

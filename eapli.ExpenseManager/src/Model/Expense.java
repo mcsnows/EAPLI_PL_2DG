@@ -15,13 +15,14 @@ import Model.ExpenseType;
 
 /**
  *
- * @author
+ * @author Jose Nuno Loureiro
  */
 public class Expense {
 
     private String description;
     private BigDecimal amount;
     private Calendar dateOcurred;
+    private ExpenseType type;
 
     protected Expense() {
     }
@@ -52,6 +53,20 @@ public class Expense {
         this.amount = exp.amount;
     }
 
+    public Expense(String description, Calendar dateOccurred, BigDecimal amount, ExpenseType type) {
+        if (description == null || dateOccurred == null || amount == null) {
+            throw new IllegalArgumentException();
+        }
+        // cannot record a negative expense or a zero EUR expense
+        if (amount.signum() == -1 || amount.signum() == 0) {
+            throw new IllegalArgumentException();
+        }
+        this.description = description;
+        this.amount = amount;
+        this.dateOcurred = dateOcurred;
+        this.type=type;
+    }
+    
     @Override
     public String toString() {
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
