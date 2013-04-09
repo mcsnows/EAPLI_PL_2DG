@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import Controllers.ExpenseRegisterController;
 import Model.ExpenseType;
+import Persistence.ExpenseTypeRepository;
 //import Model.PaymentMeans; //quando existir
 import java.util.Calendar;
 import java.util.List;
@@ -23,7 +24,7 @@ public class ExpenseRegisterUI {
       public void run() {
             System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
             String desc = Console.readLine("Description:\n");
-            ExpenseType expensetype = new ExpenseType("CC");
+            //ExpenseType expensetype = new ExpenseType("CC");
            // PaymentMeans paymentmeans = new PaymentMeans("null"); //objecto do tipo Payment Means
             Calendar date = Calendar.getInstance(); // Date do tipo Calendar?
            // Date date = Console.readDate("When (dd-MM-yyyy):"); ANTIGA DATA
@@ -32,9 +33,13 @@ public class ExpenseRegisterUI {
             String comment = Console.readLine("Comment\n"); //Comentário da despesa
 
             ExpenseRegisterController controller = new ExpenseRegisterController();
-            controller.registerExpense(desc, date, amount);
-            
             displayListExpenseType(controller.getExpenseTypes());
+            
+            int position = Console.readInteger("Select an expense type:\n");
+            ExpenseType type = controller.getExpenseTypes().get(position);
+            controller.registerExpense(desc, date, amount, type);
+            
+            
             //controller.getPayentMeans();
 
             System.out.println("Expense recorded. \n");
