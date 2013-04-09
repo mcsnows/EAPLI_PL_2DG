@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author
+ * @author Jose Nuno Loureiro
  */
 public class ExpenseRepository implements IExpenseRepository {
     // class member
