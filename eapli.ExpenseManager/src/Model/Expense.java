@@ -38,8 +38,6 @@ public class Expense {
         this.amount = amount;
         this.dateOcurred = dateOcurred;
     }
-    
-    
 
 //antiga data calendar
     public Expense(String desc, int year, int month, int day, BigDecimal amount) {
@@ -63,7 +61,12 @@ public class Expense {
         return s;
 
     }
+
     public Calendar getDateOcurred() {
         return dateOcurred;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
     }
 }
