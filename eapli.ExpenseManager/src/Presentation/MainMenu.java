@@ -34,7 +34,12 @@ public class MainMenu {
                               uiType.run();
                               break;
                         case 4:
-                              MonthExpensesUI meUI=new MonthExpensesUI();
+                              ShowWeeklyExpensesUI SWE=new ShowWeeklyExpensesUI();
+                              SWE.run();
+                              break;
+                  
+                        case 5:
+                              ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
                               meUI.run();
                               break;
                   }

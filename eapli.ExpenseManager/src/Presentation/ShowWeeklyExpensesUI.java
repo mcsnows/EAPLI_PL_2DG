@@ -24,14 +24,15 @@ public class ShowWeeklyExpensesUI {
       public void run() {
           ExpenseRegisterController  ERC=new ExpenseRegisterController();
           
-          List<Expense> listWeekly= ERC.getWeeklyExpenses();
+          List<Expense> listweekly= ERC.getWeeklyExpenses();
           
-          System.out.println("* * *  WEEKLY EXPENSES  * * *\n");
+          System.out.println("* * *  MONTHLY EXPENSES  * * *\n");
             
-            displayListExpenseType(controller.getExpenseTypes());
-//            controller.getPayentMeans();
-
-            System.out.println("Expense recorded. \n");
+          for(int i=0;i<listweekly.size();i++)
+          {
+              System.out.println(listweekly.get(i).toString());
+          }
+             
       }
       
       }
