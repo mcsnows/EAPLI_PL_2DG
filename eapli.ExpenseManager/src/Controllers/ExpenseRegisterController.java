@@ -5,10 +5,14 @@
 package Controllers;
 
 import Model.Expense;
+import Model.ExpenseType;
 import Persistence.ExpenseRepository;
+import Persistence.ExpenseTypeRepository;
+import Persistence.IExpenseTypeRepository;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 /**
  *
  * @author 
@@ -22,4 +26,11 @@ public class ExpenseRegisterController {
             ExpenseRepository controller=new ExpenseRepository();
             controller.saveExpense(expense);
       }
+
+    public List<ExpenseType> getExpenseTypes() {
+        ExpenseTypeRepository etr = new ExpenseTypeRepository();
+        return etr.getAllExpenseTypes();
+    }
+      
+      
 }

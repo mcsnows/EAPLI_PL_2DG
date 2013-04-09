@@ -11,7 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import Model.ExpenseType;
-import Model.PaymentMeans; //quando existir
+//import Model.PaymentMeans; //quando existir
 
 /**
  *
