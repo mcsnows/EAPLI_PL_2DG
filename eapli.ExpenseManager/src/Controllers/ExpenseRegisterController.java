@@ -8,6 +8,7 @@ import Model.Expense;
 import Persistence.ExpenseRepository;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 /**
  *
  * @author 
@@ -20,5 +21,12 @@ public class ExpenseRegisterController {
             Expense expense = new Expense(desc, date, amount);
             ExpenseRepository controller=new ExpenseRepository();
             controller.saveExpense(expense);
+      }
+      
+      List<Expense> getWeeklyExpense()
+      {
+          
+          return
+      }
       }
 }
