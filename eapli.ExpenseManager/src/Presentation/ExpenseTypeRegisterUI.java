@@ -31,7 +31,7 @@ public class ExpenseTypeRegisterUI {
             String type = Console.readLine("\nRegister expense type please:");
             controller.registerExpenseType(type);
 
-            System.out.println("E3xpense type recorded.");
+            System.out.println("Expense type recorded.");
       }
 
 }
