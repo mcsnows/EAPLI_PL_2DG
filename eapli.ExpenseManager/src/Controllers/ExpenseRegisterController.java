@@ -15,14 +15,14 @@ import java.util.Date;
 import java.util.List;
 /**
  *
- * @author 
+ * @author Jose Nuno Loureiro
  */
 public class ExpenseRegisterController {
       public ExpenseRegisterController() {
       }
 
-      public void registerExpense(String desc, Calendar date, BigDecimal amount) {
-            Expense expense = new Expense(desc, date, amount);
+      public void registerExpense(String desc, Calendar date, BigDecimal amount, ExpenseType type) {
+            Expense expense = new Expense(desc, date, amount, type);
             ExpenseRepository controller=new ExpenseRepository();
             controller.saveExpense(expense);
       }
