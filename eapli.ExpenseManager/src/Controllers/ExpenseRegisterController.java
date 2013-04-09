@@ -33,25 +33,7 @@ public class ExpenseRegisterController {
         return etr.getAllExpenseTypes();
     }
     
-    public List<Expense> getWeeklyExpenses()
-    {
-        ExpenseRepository ERepo=new ExpenseRepository();
-        List<Expense> listExpenses=ERepo.getAllExpenses();
-        ExpenseRecord ERec=new ExpenseRecord(listExpenses);
-        
-        return ERec.getWeeklyExpenses();
-        
-    }
-    
-     public List<Expense> getMonthlyExpenses()
-    {
-        ExpenseRepository ERepo=new ExpenseRepository();
-        List<Expense> listExpenses=ERepo.getAllExpenses();
-        ExpenseRecord ERec=new ExpenseRecord(listExpenses);
-        
-        return ERec.getMonthlyExpenses();
-        
-    }
+   
       
       
 }
