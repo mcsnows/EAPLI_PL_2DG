@@ -15,7 +15,13 @@ import java.util.List;
  */
 public class ExpenseRecord {
     
-    public static List<Expense> getMonthExpenses(String month){
+    private List<Expense> allExpenses;
+    
+    public ExpenseRecord(List<Expense> all){
+        allExpenses=all;
+    }
+    
+    public List<Expense> getMonthExpenses(String month){
         String[] aux=month.split("-");
         int[] auxM=new int[2];
         ExpenseRepository repo=new ExpenseRepository();
@@ -29,5 +35,14 @@ public class ExpenseRecord {
             }   
         }
         return despesas;
+    }
+    
+    public List<Expense> getWeeklyExpenses(String week){
+        List<Expense> weekExpenses=null;
+        for(int i=0; i<allExpenses.size(); i++){
+            if(allExpenses.get(i).getDateOcurred().getWeekYear()==Integer.parseInt(week))
+                weekExpenses.add(allExpenses.get(i));
+        }
+        return weekExpenses;
     }
 }
