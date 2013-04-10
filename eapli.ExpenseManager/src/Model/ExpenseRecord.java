@@ -44,4 +44,15 @@ public class ExpenseRecord {
         }
         return weekExpenses;
     }
+    
+    public float calculateExpensesBalance(){
+        float balance = 0;
+        for(int i = 0; i < allExpenses.size(); i++){
+            balance = balance + allExpenses.get(i).getAmount().floatValue();
+            
+        }
+        System.out.println("DEBUG - Balance: "+balance);
+        return balance;
+    }
+    
 }
