@@ -21,11 +21,10 @@ public class ExpenseRecord {
         allExpenses=all;
     }
     
-    public List<Expense> getMonthExpenses(String month){
+    public List<Expense> getMonthlyExpenses(String month){
         String[] aux=month.split("-");
         int[] auxM=new int[2];
-        ExpenseRepository repo=new ExpenseRepository();
-        List<Expense> despesas=repo.getAllExpenses();
+        List<Expense> despesas=allExpenses;
         List<Expense> despmes = null;
         for(int i=0;i<despesas.size();i++){
             auxM[0]=despesas.get(i).getDateOcurred().MONTH;

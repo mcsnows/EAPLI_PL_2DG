@@ -5,7 +5,7 @@
 package Presentation;
 
 import Controllers.ExpenseRegisterController;
-//import Controllers.MonthExpensesController;
+import Controllers.MonthlyExpensesController;
 import Model.Expense;
 import eapli.util.Console;
 import java.util.List;
@@ -15,13 +15,14 @@ import java.util.List;
  * @author i110459
  */
 public class ShowMonthlyExpensesUI {
-} 
 
-/*
+
+
       public void run() {
-          ExpenseRegisterController  ERC=new ExpenseRegisterController();
+          MonthlyExpensesController  MEC=new MonthlyExpensesController();
+          String date=Console.readLine("Qual o mes pretendido?(mm-yyyy)");
           
-          List<Expense> listmonthly= ERC.getWeeklyExpenses();
+          List<Expense> listmonthly= MEC.getMonthlyExpenses(date);
           
           System.out.println("* * *  MONTHLY EXPENSES  * * *\n");
             
@@ -31,4 +32,4 @@ public class ShowMonthlyExpensesUI {
           }
              
       }
-}*/
+}
