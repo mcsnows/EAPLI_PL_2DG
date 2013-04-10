@@ -17,11 +17,13 @@ import java.util.List;
  *
  * @author 
  */
-public class ExpenseRegisterUI {
+public class ExpenseRegisterUI extends BaseUI{
       public ExpenseRegisterUI() {
       }
       
+      
       public void run() {
+          
             System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
             String desc = Console.readLine("Description:\n");
             //ExpenseType expensetype = new ExpenseType("CC");
@@ -36,7 +38,7 @@ public class ExpenseRegisterUI {
             displayListExpenseType(controller.getExpenseTypes());
             
             int position = Console.readInteger("Select an expense type:\n");
-            ExpenseType type = controller.getExpenseTypes().get(position);
+            ExpenseType type = controller.getExpenseTypes().get(position-1);
             controller.registerExpense(desc, date, amount, type);
             
             
@@ -51,7 +53,7 @@ public class ExpenseRegisterUI {
             System.out.println("List of Expense Types \n");
             for (ExpenseType type : list) {
                   i=i+1;
-                  System.out.println("Expense Type "+i+"\n" + type);
+                  System.out.println(i+" --> " + type);
             }
       }
       
@@ -63,4 +65,9 @@ public class ExpenseRegisterUI {
 //                  System.out.println("Payment Means "+i+"\n" + paymentmeans);
 //            }
 //      }
+
+    @Override
+    public void header() {
+        System.out.println("---REGISTER AN EXPENSE---");
+    }
 }

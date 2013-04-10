@@ -20,7 +20,6 @@ public class ExpenseListController {
     
     public List<Expense>getAllExpenses(){
         ExpenseRepository repo = new ExpenseRepository();
-        
         return repo.getAllExpenses();
     }
 }

@@ -37,12 +37,12 @@ public class MainMenu {
                     break;
                 case 4:
                     ShowWeeklyExpensesUI SWE = new ShowWeeklyExpensesUI();
-                    SWE.run();
+                    //SWE.run();
                     break;
 
                 case 5:
-                    ShowMonthlyExpensesUI meUI = new ShowMonthlyExpensesUI();
-                    meUI.run();
+                    //ShowMonthlyExpensesUI meUI = new ShowMonthlyExpensesUI();
+                    //meUI.run();
                     break;
                 case 6:
                     PaymentMeanUI pui = new PaymentMeanUI();
@@ -67,4 +67,4 @@ public class MainMenu {
         int option = Console.readInteger("Please choose an option");
         return option;
     }
-}
+      }

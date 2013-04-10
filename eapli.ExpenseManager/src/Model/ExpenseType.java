@@ -9,25 +9,25 @@ package Model;
  * @author Ricardo Rocha
  */
 public class ExpenseType {
-    private String type;
+    private String description;
     
     public ExpenseType(){}
   
-    public ExpenseType(String type)
+    public ExpenseType(String description)
     {
-        this.type = type;
+        this.description = description;
     }
     public ExpenseType(ExpenseType expenseType)
     {
-        this.type = expenseType.getType();
+        this.description = expenseType.getdescription();
     }
-    public String getType()
+    public String getdescription()
     {
-        return type;
+        return description;
     }
     
     public String toString()
     {
-        return "Type: " + type;
+        return "Type: " + description;
     }
 }

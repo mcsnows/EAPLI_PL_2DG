@@ -84,4 +84,12 @@ public class Expense {
     public BigDecimal getAmount() {
         return amount;
     }
+    
+    public int getMonth(){
+        return dateOcurred.MONTH; 
+    }
+    
+    public int getYear(){
+        return dateOcurred.YEAR;
+    }
 }

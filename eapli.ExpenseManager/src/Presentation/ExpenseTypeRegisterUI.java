@@ -25,7 +25,7 @@ public class ExpenseTypeRegisterUI {
           
             System.out.println("\n* * * ALL EXPENSETYPES * * *");
             for (int i = 0; i < listExpenseType.size(); i++) {
-                System.out.println(listExpenseType.get(i).getType());
+                System.out.println(listExpenseType.get(i).getdescription());
             }
             
             String type = Console.readLine("\nRegister expense type please:");

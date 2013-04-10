@@ -18,7 +18,7 @@ import java.util.List;
  * @author 
  */
 public class ShowWeeklyExpensesUI {
-      public ShowWeeklyExpensesUI() {
+/*      public ShowWeeklyExpensesUI() {
       }
 
       public void run() {
@@ -35,5 +35,6 @@ public class ShowWeeklyExpensesUI {
              
       }
       
-      }
+      } 
+}*/
 }
