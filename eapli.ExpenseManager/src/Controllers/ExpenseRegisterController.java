@@ -30,7 +30,7 @@ public class ExpenseRegisterController {
       }
 
     public List<ExpenseType> getExpenseTypes() {
-        ExpenseTypeRepository etr = new ExpenseTypeRepository();
+        IExpenseTypeRepository etr = Persistence.PersistenceRegistry.getInstance().expenseTypeRepository();
         return etr.getAllExpenseTypes();
     }
     
