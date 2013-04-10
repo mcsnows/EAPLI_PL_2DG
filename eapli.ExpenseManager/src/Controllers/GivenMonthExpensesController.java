@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.Expense;
 import Model.ExpenseRecord;
+import Model.ExpenseType;
 import Persistence.ExpenseRepository;
 import java.util.List;
 
@@ -20,5 +21,11 @@ public class GivenMonthExpensesController {
         ExpenseRecord ER=new ExpenseRecord(repo.getAllExpenses());
         return ER.getMonthlyExpenses(date);
     }
+    
+    public List<Expense> getFMonthlyExpenses(ExpenseType type,String date){
+        ExpenseRepository repo=new ExpenseRepository();
+        return null;
+    }
+    
     
 }

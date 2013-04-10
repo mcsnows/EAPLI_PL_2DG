@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.CalculateBalanceController;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -44,7 +45,9 @@ public class ExpenseRegisterUI extends BaseUI{
             ExpenseType type = controller.getExpenseTypes().get(position-1);
             controller.registerExpense(desc, date, amount, type);
             
-            
+            CalculateBalanceController calculate = new CalculateBalanceController();
+            System.out.println("Current balance: "+calculate.calculateExpenseBalance());            
+             
             //controller.getPayentMeans();
 
             System.out.println("Expense recorded. \n");
