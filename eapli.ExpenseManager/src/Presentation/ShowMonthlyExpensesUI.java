@@ -5,7 +5,7 @@
 package Presentation;
 
 import Controllers.ExpenseRegisterController;
-import Controllers.MonthExpensesController;
+//import Controllers.MonthExpensesController;
 import Model.Expense;
 import eapli.util.Console;
 import java.util.List;
@@ -15,9 +15,9 @@ import java.util.List;
  * @author i110459
  */
 public class ShowMonthlyExpensesUI {
-    
+} 
 
-
+/*
       public void run() {
           ExpenseRegisterController  ERC=new ExpenseRegisterController();
           
@@ -31,4 +31,4 @@ public class ShowMonthlyExpensesUI {
           }
              
       }
-}
+}*/
