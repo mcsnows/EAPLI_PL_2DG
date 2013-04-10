@@ -39,7 +39,7 @@ public class MainMenu {
                               break;
                   
                         case 5:
-                              ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
+                              //ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
                               //meUI.run();
                               break;
                         case 6:
