@@ -27,4 +27,8 @@ public class PersistenceRegistry {
     public IExpenseRepository expenseRepository(){
         return new ExpenseRepository();
     }
+    
+    public IExpenseTypeRepository expenseTypeRepository(){
+        return new ExpenseTypeRepository();
+    }
 }
