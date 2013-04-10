@@ -71,8 +71,9 @@ public class Expense {
     public String toString() {
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
         double doubleAmount = this.amount.doubleValue();
-        String s = "Description:" + this.description
-                + "\nAmount:" + n.format(doubleAmount);
+        String s = "Description: " + this.description
+                + "\nAmount: " + n.format(doubleAmount) + "\nDate: " + dateOcurred
+                + "\n "+ type;
         return s;
 
     }
