@@ -5,59 +5,66 @@
 package Presentation;
 
 import eapli.util.Console;
+
 /**
  *
  * @author mcn
  */
 public class MainMenu {
-      public MainMenu() {
-      }
 
-      public void mainLoop() {
-            int op;
-            do {
-                  op = menu();
-                  switch (op) {
-                        case 0:
-                              System.out.println("bye bye ...");
-                              break;
-                        case 1:
-                              ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                              ui.run();
-                              break;
-                        case 2:
-                              ShowExpensesUI showExpensesUI = new ShowExpensesUI();
-                              showExpensesUI.loop();
-                              break;
-                        case 3:
-                              ExpenseTypeRegisterUI uiType = new ExpenseTypeRegisterUI();
-                              uiType.run();
-                              break;
-                        case 4:
-                              ShowWeeklyExpensesUI SWE=new ShowWeeklyExpensesUI();
-                              SWE.run();
-                              break;
-                  
-                        case 5:
-                              ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
-                              meUI.run();
-                              break;
-                  }
-            } while (op != 0);
+    public MainMenu() {
+    }
 
-      }
+    public void mainLoop() {
+        int op;
+        do {
+            op = menu();
+            switch (op) {
+                case 0:
+                    System.out.println("bye bye ...");
+                    break;
+                case 1:
+                    ExpenseRegisterUI ui = new ExpenseRegisterUI();
+                    ui.run();
+                    break;
+                case 2:
+                    ShowExpensesUI showExpensesUI = new ShowExpensesUI();
+                    showExpensesUI.loop();
+                    break;
+                case 3:
+                    ExpenseTypeRegisterUI uiType = new ExpenseTypeRegisterUI();
+                    uiType.run();
+                    break;
+                case 4:
+                    ShowWeeklyExpensesUI SWE = new ShowWeeklyExpensesUI();
+                    SWE.run();
+                    break;
 
-      private static int menu() {
-            System.out.println("===================");
-            System.out.println("  EXPENSE MANAGER  ");
-            System.out.println("===================\n");
-            System.out.println("1. Register an expense");
-            System.out.println("2. Show expenses");
-            System.out.println("3. Register expenses type");
-            System.out.println("4. Show month expenses");
-            System.out.println("0. Exit\n\n");
+                case 5:
+                    ShowMonthlyExpensesUI meUI = new ShowMonthlyExpensesUI();
+                    meUI.run();
+                    break;
+                case 6:
+                    PaymentMeanUI pui = new PaymentMeanUI();
+                    pui.run();
+                    break;
+            }
+        } while (op != 0);
 
-            int option = Console.readInteger("Please choose an option");
-            return option;
-      }
+    }
+
+    private static int menu() {
+        System.out.println("===================");
+        System.out.println("  EXPENSE MANAGER  ");
+        System.out.println("===================\n");
+        System.out.println("1. Register an expense");
+        System.out.println("2. Show expenses");
+        System.out.println("3. Register expenses type");
+        System.out.println("4. Show month expenses");
+        System.out.println("6. Register a Payment Mean");
+        System.out.println("0. Exit\n\n");
+
+        int option = Console.readInteger("Please choose an option");
+        return option;
+    }
 }
