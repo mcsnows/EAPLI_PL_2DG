@@ -42,6 +42,10 @@ public class MainMenu {
                               ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
                               //meUI.run();
                               break;
+                        case 6:
+                              IncomeTypeRegisterUI incomeTypeUI = new IncomeTypeRegisterUI();
+                              incomeTypeUI.run();
+                              break;
                   }
             } while (op != 0);
 
@@ -55,6 +59,7 @@ public class MainMenu {
             System.out.println("2. Show expenses");
             System.out.println("3. Register expenses type");
             System.out.println("4. Show month expenses");
+            System.out.println("6. Register income type");
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");

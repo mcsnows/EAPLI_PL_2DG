@@ -6,6 +6,7 @@ package Presentation;
 
 import eapli.ExpenseBootStrapper;
 import eapli.ExpenseTypeBootStrapper;
+import eapli.IncomeTypeBootStrapper;
 
 /**
  *
@@ -19,6 +20,7 @@ public class ExpenseManager {
       public static void main(String[] args) {
             ExpenseBootStrapper boot=new ExpenseBootStrapper();
             ExpenseTypeBootStrapper bootType = new ExpenseTypeBootStrapper();
+            IncomeTypeBootStrapper bootIncomeType = new IncomeTypeBootStrapper();
             MainMenu menu = new MainMenu();
             menu.mainLoop();
       }
