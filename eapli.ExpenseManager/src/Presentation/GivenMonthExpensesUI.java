@@ -4,9 +4,10 @@
  */
 package Presentation;
 
-import Controllers.ExpenseRegisterController;
-import Controllers.MonthlyExpensesController;
+import Controllers.GivenMonthExpensesController;
 import Model.Expense;
+import Model.ExpenseType;
+import Persistence.ExpenseTypeRepository;
 import eapli.util.Console;
 import java.util.List;
 
@@ -25,10 +26,23 @@ public class GivenMonthExpensesUI {
     }
     
     public void run() {   
-        MonthlyExpensesController  MEC=new MonthlyExpensesController();
+        GivenMonthExpensesController  MEC=new GivenMonthExpensesController();
+        List<Expense> listmonthly;
         String date=Console.readLine("Qual o mes pretendido?(mm-yyyy)");
-          
-        List<Expense> listmonthly= MEC.getMonthlyExpenses(date);
+        String f=Console.readLine("Deseja filtrar por tipo de despesa?(S/N)");
+        if(f.matches("N")||f.matches("n")){
+            listmonthly= MEC.getMonthlyExpenses(date);
+        }
+        else{
+            ExpenseTypeRepository etr=new ExpenseTypeRepository();
+            List<ExpenseType> eT=etr.getAllExpenseTypes();
+            for(int i=0;i<eT.size();i++){
+                System.out.println((i+1)+"-"+eT.get(i));
+            }
+            int t=Console.readInteger("Qual o tipo?");
+            ExpenseType T=eT.get(t-1);
+            listmonthly= MEC.getFMonthlyExpenses(T,date);
+        }
         header();
             
         for(int i=0;i<listmonthly.size();i++)
