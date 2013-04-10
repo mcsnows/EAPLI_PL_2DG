@@ -35,12 +35,12 @@ public class MainMenu {
                               break;
                         case 4:
                               ShowWeeklyExpensesUI SWE=new ShowWeeklyExpensesUI();
-                              SWE.run();
+                              //SWE.run();
                               break;
                   
                         case 5:
                               ShowMonthlyExpensesUI meUI=new ShowMonthlyExpensesUI();
-                              meUI.run();
+                              //meUI.run();
                               break;
                   }
             } while (op != 0);

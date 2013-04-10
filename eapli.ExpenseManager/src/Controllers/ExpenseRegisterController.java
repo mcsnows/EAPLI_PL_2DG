@@ -9,6 +9,7 @@ import Model.ExpenseRecord;
 import Model.ExpenseType;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
+import Persistence.IExpenseRepository;
 import Persistence.IExpenseTypeRepository;
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -24,7 +25,7 @@ public class ExpenseRegisterController {
 
       public void registerExpense(String desc, Calendar date, BigDecimal amount, ExpenseType type) {
             Expense expense = new Expense(desc, date, amount, type);
-            ExpenseRepository controller=new ExpenseRepository();
+            IExpenseRepository controller= Persistence.PersistenceRegistry.getInstance().expenseRepository();
             controller.saveExpense(expense);
       }
 
