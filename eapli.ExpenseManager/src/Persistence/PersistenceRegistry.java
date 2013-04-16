@@ -36,4 +36,12 @@ public class PersistenceRegistry {
         return new PaymentMeansRepository();
     }
     
+    public IIncomeRepository incomeRepository(){
+        return new IncomeRepository();
+    }
+    
+    public IIncomeTypeRepository incomeTypeRepository(){
+        return new IncomeTypeRepository();
+    }
+    
 }
