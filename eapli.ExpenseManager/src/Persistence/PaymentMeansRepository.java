@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PaymentMeansRepository {
+public class PaymentMeansRepository implements IPaymentMeansRepository{
     
     private static List<PaymentMean> listPaymentMean = new ArrayList<PaymentMean>();
     

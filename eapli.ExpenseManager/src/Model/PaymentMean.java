@@ -16,4 +16,7 @@ public class PaymentMean {
         this.description = description;
     }
     
+    public String toString(){
+        return "Payment Mean: " + description;
+    }
 }

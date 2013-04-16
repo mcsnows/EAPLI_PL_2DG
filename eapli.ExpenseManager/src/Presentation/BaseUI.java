@@ -9,7 +9,7 @@ package Presentation;
  * @author Outsider
  */
 public abstract class BaseUI {
-    //protected abstract BaseController controller();
+        //protected abstract BaseController controller();
     public abstract void header();
     public abstract void run();
     

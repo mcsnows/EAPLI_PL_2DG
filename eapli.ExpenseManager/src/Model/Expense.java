@@ -21,8 +21,10 @@ public class Expense {
 
     private String description;
     private BigDecimal amount;
+    private PaymentMean paymentMean;
     private Calendar dateOcurred;
     private ExpenseType type;
+    
 
     protected Expense() {
     }
@@ -67,12 +69,29 @@ public class Expense {
         this.type=type;
     }
     
+    public Expense(String description, Calendar dateOccurred, BigDecimal amount, PaymentMean paymentMean, ExpenseType type) {
+        if (description == null || dateOccurred == null || amount == null) {
+            throw new IllegalArgumentException();
+        }
+        // cannot record a negative expense or a zero EUR expense
+        if (amount.signum() == -1 || amount.signum() == 0) {
+            throw new IllegalArgumentException();
+        }
+        this.description = description;
+        this.amount = amount;
+        this.paymentMean = paymentMean;
+        this.dateOcurred = dateOcurred;
+        this.type=type;
+    }
+    
     @Override
     public String toString() {
         NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
         double doubleAmount = this.amount.doubleValue();
         String s = "Description: " + this.description
-                + "\nAmount: " + n.format(doubleAmount) + "\nDate: " + dateOcurred
+                + "\nAmount: " + n.format(doubleAmount)  
+                + "\n" + paymentMean
+                +"\nDate: " + dateOcurred
                 + "\n "+ type;
         return s;
 

@@ -7,10 +7,12 @@ package Controllers;
 import Model.Expense;
 import Model.ExpenseRecord;
 import Model.ExpenseType;
+import Model.PaymentMean;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Persistence.IExpenseRepository;
 import Persistence.IExpenseTypeRepository;
+import Persistence.IPaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
@@ -28,13 +30,21 @@ public class ExpenseRegisterController {
             IExpenseRepository controller= Persistence.PersistenceRegistry.getInstance().expenseRepository();
             controller.saveExpense(expense);
       }
+      
+      public void registerExpense(String desc, Calendar date, BigDecimal amount, PaymentMean mean, ExpenseType type) {
+            Expense expense = new Expense(desc, date, amount, mean, type);
+            IExpenseRepository controller= Persistence.PersistenceRegistry.getInstance().expenseRepository();
+            controller.saveExpense(expense);
+      }
 
     public List<ExpenseType> getExpenseTypes() {
         IExpenseTypeRepository etr = Persistence.PersistenceRegistry.getInstance().expenseTypeRepository();
         return etr.getAllExpenseTypes();
     }
     
-   
-      
+    public List<PaymentMean> getPaymentMeans() {
+        IPaymentMeansRepository pmr = Persistence.PersistenceRegistry.getInstance().paymentMeansRepository();
+        return pmr.getAllPaymentMean();
+    }
       
 }

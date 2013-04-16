@@ -31,4 +31,9 @@ public class PersistenceRegistry {
     public IExpenseTypeRepository expenseTypeRepository(){
         return new ExpenseTypeRepository();
     }
+    
+    public IPaymentMeansRepository paymentMeansRepository(){
+        return new PaymentMeansRepository();
+    }
+    
 }
