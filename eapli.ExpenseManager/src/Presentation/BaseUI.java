@@ -38,3 +38,4 @@ public abstract class BaseUI {
          System.out.println("Monthly expenditure" + n.format(month));
     }
 }
+

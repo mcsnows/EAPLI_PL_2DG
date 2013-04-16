@@ -93,3 +93,4 @@ public class ExpenseRegisterUI extends BaseUI {
         System.out.println("---REGISTER AN EXPENSE---");
     }
 }
+

@@ -75,6 +75,7 @@ public class ExpenseRecord {
         return total;
     }
     
+    
     public float calculateExpensesBalance(){
         float balance = 0;
         for(int i = 0; i < allExpenses.size(); i++){
