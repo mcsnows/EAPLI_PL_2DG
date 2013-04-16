@@ -36,7 +36,22 @@ public class ExpenseRecord {
                 despmes.add(despesas.get(i));
             }   
         }
-        return despesas;
+        return despmes;
+    }
+    
+    public List<Expense> getFMonthlyExpensesList(ExpenseType T,String month){
+        String[] aux=month.split("-");
+        int[] auxM=new int[2];
+        List<Expense> despesas=allExpenses;
+        List<Expense> despmes = null;
+        for(int i=0;i<despesas.size();i++){
+            auxM[0]=despesas.get(i).getMonth();
+            auxM[1]=despesas.get(i).getYear();
+            if((Integer.parseInt(aux[0]))==auxM[0] && (Integer.parseInt(aux[1]))==auxM[1] && despesas.get(i).getExpenseType().equals(T)){
+                despmes.add(despesas.get(i));
+            }   
+        }
+        return despmes;
     }
     
     

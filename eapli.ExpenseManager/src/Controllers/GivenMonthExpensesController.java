@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author i110459
  */
-public class GivenMonthExpensesController {
+public class GivenMonthExpensesController extends BaseController{
     
     public List<Expense> getMonthlyExpensesList(String date){
         ExpenseRepository repo=new ExpenseRepository();
@@ -22,7 +22,7 @@ public class GivenMonthExpensesController {
         return ER.getMonthlyExpensesList(date);
     }
     
-    public List<Expense> getFMonthlyExpenses(ExpenseType type,String date){
+    public List<Expense> getFMonthlyExpensesList(ExpenseType type,String date){
         ExpenseRepository repo=new ExpenseRepository();
         return null;
     }

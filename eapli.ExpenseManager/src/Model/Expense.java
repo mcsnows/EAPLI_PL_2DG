@@ -109,10 +109,18 @@ public class Expense {
     }
     
     public int getMonth(){
-        return dateOcurred.getMonth(); 
+        Calendar c=null;
+        c.setTime(dateOcurred);
+        return c.MONTH; 
     }
     
     public int getYear(){
-        return dateOcurred.getYear();
+        Calendar c=null;
+        c.setTime(dateOcurred);
+        return c.YEAR;
+    }
+    
+    public ExpenseType getExpenseType(){
+        return type;
     }
 }
