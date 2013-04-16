@@ -5,10 +5,12 @@ import Model.Check;
 import Model.CreditCard;
 import Model.DebitCard;
 import Model.Expense;
+import Model.PaymentMean;
 import Persistence.ExpenseRepository;
 import Persistence.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class PaymentMeanController {
 
@@ -36,5 +38,11 @@ public class PaymentMeanController {
         DebitCard dc = new DebitCard(accountNumberDC, bankDC, validadeDC);
         
         repo.savePaymentMean(dc);
+    }
+    
+    public List<PaymentMean> listAllPaymentMeans(){
+        PaymentMeansRepository pmr = new  PaymentMeansRepository();
+        List<PaymentMean> list = pmr.getAllPaymentMean();
+        return list;
     }
 }
