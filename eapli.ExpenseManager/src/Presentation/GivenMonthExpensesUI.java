@@ -31,7 +31,7 @@ public class GivenMonthExpensesUI {
         String date=Console.readLine("Qual o mes pretendido?(mm-yyyy)");
         String f=Console.readLine("Deseja filtrar por tipo de despesa?(S/N)");
         if(f.matches("N")||f.matches("n")){
-            listmonthly= MEC.getMonthlyExpenses(date);
+            listmonthly= MEC.getMonthlyExpensesList(date);
         }
         else{
             ExpenseTypeRepository etr=new ExpenseTypeRepository();

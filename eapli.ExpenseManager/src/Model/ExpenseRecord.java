@@ -6,7 +6,9 @@ package Model;
 
 import Persistence.ExpenseRepository;
 import eapli.util.DateTime;
+import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,7 +23,8 @@ public class ExpenseRecord {
         allExpenses=all;
     }
     
-    public List<Expense> getMonthlyExpenses(String month){
+    public List<Expense> getMonthlyExpensesList(String month){
+        BigDecimal total=new BigDecimal(0);
         String[] aux=month.split("-");
         int[] auxM=new int[2];
         List<Expense> despesas=allExpenses;
@@ -36,13 +39,40 @@ public class ExpenseRecord {
         return despesas;
     }
     
-    public List<Expense> getWeeklyExpenses(String week){
+    
+    public BigDecimal getMonthlyExpenses(String month){
+        BigDecimal total=new BigDecimal(0);
+        String[] aux=month.split("-");
+        int[] auxM=new int[2];
+        List<Expense> despesas=allExpenses;
+        List<Expense> despmes = null;
+        for(int i=0;i<despesas.size();i++){
+            auxM[0]=despesas.get(i).getMonth();
+            auxM[1]=despesas.get(i).getYear();
+            if((Integer.parseInt(aux[0]))==auxM[0] && (Integer.parseInt(aux[1]))==auxM[1]){
+                despmes.add(despesas.get(i));
+            }   
+        }
+        for(int i=0;i<despesas.size();i++){
+            total = new BigDecimal(total.doubleValue() + despesas.get(i).getAmount().doubleValue());
+        }
+        return total;
+    }
+    
+    public BigDecimal getWeeklyExpenses(int n){
         List<Expense> weekExpenses=null;
+        BigDecimal total = new BigDecimal(0);
+        
         for(int i=0; i<allExpenses.size(); i++){
-            if(allExpenses.get(i).getDateOcurred().getWeekYear()==Integer.parseInt(week))
+            if(allExpenses.get(i).getDateOcurred().getWeekYear()==n)
                 weekExpenses.add(allExpenses.get(i));
         }
-        return weekExpenses;
+        
+        for(int i=0; i<weekExpenses.size(); i++){
+            total= new BigDecimal(total.doubleValue() + weekExpenses.get(i).getAmount().doubleValue());
+        }
+        
+        return total;
     }
     
     public float calculateExpensesBalance(){

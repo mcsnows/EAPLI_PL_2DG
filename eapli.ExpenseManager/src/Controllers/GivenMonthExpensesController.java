@@ -16,10 +16,10 @@ import java.util.List;
  */
 public class GivenMonthExpensesController {
     
-    public List<Expense> getMonthlyExpenses(String date){
+    public List<Expense> getMonthlyExpensesList(String date){
         ExpenseRepository repo=new ExpenseRepository();
         ExpenseRecord ER=new ExpenseRecord(repo.getAllExpenses());
-        return ER.getMonthlyExpenses(date);
+        return ER.getMonthlyExpensesList(date);
     }
     
     public List<Expense> getFMonthlyExpenses(ExpenseType type,String date){
