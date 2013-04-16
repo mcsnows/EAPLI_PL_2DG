@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Persistence.PaymentMeansRepository;
 import eapli.util.Console;
 
 /**
@@ -52,6 +53,10 @@ public class MainMenu {
                     IncomeRegisterUI incomeRegisterUI = new IncomeRegisterUI();
                     incomeRegisterUI.run();
                     break;
+                case 8:
+                    PaymentMeanUI pm= new PaymentMeanUI();
+                    pm.run();
+                    break;
             }
         } while (op != 0);
 
@@ -67,6 +72,7 @@ public class MainMenu {
         System.out.println("4. Show month expenses");
         System.out.println("6. Register income type");
         System.out.println("7. Register an income");
+        System.out.println("8. Register Payment Mean");
         System.out.println("0. Exit\n\n");
 
         int option = Console.readInteger("Please choose an option");

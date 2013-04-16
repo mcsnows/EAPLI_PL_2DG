@@ -2,10 +2,12 @@ package Presentation;
 
 import Controllers.ExpenseRegisterController;
 import Controllers.PaymentMeanController;
+import Model.PaymentMean;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class PaymentMeanUI {
     public PaymentMeanUI() {
@@ -53,6 +55,14 @@ public class PaymentMeanUI {
                     Date validadeDC = Console.readDate("Expiration value: ");
                     controller.registerDebitCard(accountNumberDC, bankDC, validadeDC);
                     break;
+                case 5:
+                    PaymentMeanController pmc= new PaymentMeanController();
+                    List<PaymentMean> list = pmc.listAllPaymentMeans();
+                    for(int i=0;i<list.size();i++){
+                        System.out.println(list.get(i));
+                        System.out.println("");
+                    }
+                    break;
             }
         } while (op!= 0);
     }
@@ -61,7 +71,8 @@ public class PaymentMeanUI {
         System.out.println("[1] Cash");
         System.out.println("[2] Check");
         System.out.println("[3] Credit Card");
-        System.out.println("[4] Debit Card");
+        System.out.println("[4] Debit Card\n");
+        System.out.println("[5] List Payment Means\n");
         System.out.println("[0] Cancel\n\n");
         
         int option = Console.readInteger("Please choose an option:\n");        
