@@ -22,14 +22,14 @@ public class Expense {
     private String description;
     private BigDecimal amount;
     private PaymentMean paymentMean;
-    private Calendar dateOcurred;
+    private Date dateOcurred;
     private ExpenseType type;
     
 
     protected Expense() {
     }
 
-    public Expense(String description, Calendar dateOccurred, BigDecimal amount) {
+    public Expense(String description, Date dateOccurred, BigDecimal amount) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -44,7 +44,7 @@ public class Expense {
 
 //antiga data calendar
     public Expense(String desc, int year, int month, int day, BigDecimal amount) {
-        this(desc, DateTime.newCalendarDate(year, month, day), amount);
+        this(desc, DateTime.newDate(year, month, day), amount);
     }
 
     public Expense(Expense exp) {
@@ -53,12 +53,12 @@ public class Expense {
         }
         this.description = exp.description;
         this.amount = exp.amount;
-        this.paymentMean = paymentMean;
-        this.dateOcurred = dateOcurred;
-        this.type=type;
+        this.paymentMean = exp.paymentMean;
+        this.dateOcurred = exp.dateOcurred;
+        this.type=exp.type;
     }
 
-    public Expense(String description, Calendar dateOccurred, BigDecimal amount, ExpenseType type) {
+    public Expense(String description, Date dateOccurred, BigDecimal amount, ExpenseType type) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -72,7 +72,7 @@ public class Expense {
         this.type=type;
     }
     
-    public Expense(String description, Calendar dateOccurred, BigDecimal amount, PaymentMean paymentMean, ExpenseType type) {
+    public Expense(String description, Date dateOccurred, BigDecimal amount, PaymentMean paymentMean, ExpenseType type) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -100,7 +100,7 @@ public class Expense {
 
     }
 
-    public Calendar getDateOcurred() {
+    public Date getDateOcurred() {
         return dateOcurred;
     }
 
@@ -109,10 +109,10 @@ public class Expense {
     }
     
     public int getMonth(){
-        return dateOcurred.MONTH; 
+        return dateOcurred.getMonth(); 
     }
     
     public int getYear(){
-        return dateOcurred.YEAR;
+        return dateOcurred.getYear();
     }
 }

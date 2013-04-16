@@ -62,16 +62,16 @@ public class ExpenseRecord {
     public BigDecimal getWeeklyExpenses(int n){
         List<Expense> weekExpenses=null;
         BigDecimal total = new BigDecimal(0);
-        
+        /*
         for(int i=0; i<allExpenses.size(); i++){
-            if(allExpenses.get(i).getDateOcurred().getWeekYear()==n)
+            if(allExpenses.get(i).getDateOcurred().getWeekYear()==n) //Método não existe em date
                 weekExpenses.add(allExpenses.get(i));
         }
         
         for(int i=0; i<weekExpenses.size(); i++){
             total= new BigDecimal(total.doubleValue() + weekExpenses.get(i).getAmount().doubleValue());
         }
-        
+        */
         return total;
     }
     

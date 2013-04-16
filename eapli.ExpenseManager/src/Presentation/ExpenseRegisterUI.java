@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.CalculateBalanceController;
 import eapli.util.Console;
 import java.math.BigDecimal;
@@ -27,19 +28,17 @@ public class ExpenseRegisterUI extends BaseUI {
     public ExpenseRegisterUI() {
     }
 
+            ExpenseRegisterController controller = new ExpenseRegisterController();
+
     public void run() {
 
         System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
         String desc = Console.readLine("Description:\n");
-        int year = Console.readInteger("Year:\n");
-        int month = Console.readInteger("Month (1-12):\n");
-        int day = Console.readInteger("Day:\n");
 
-        Calendar date = DateTime.newCalendarDate(year, month, day); // Date do tipo Calendar
+        Date date = Console.readDate("Date (dd-mm-yyyy): ");
 
         double value = Console.readDouble("Amount:\n"); //valor da despesa
         BigDecimal amount = new BigDecimal(value);
-        ExpenseRegisterController controller = new ExpenseRegisterController();
 
         displayListPaymentMeans(controller.getPaymentMeans()); // Listar meios de pagamento
         int ppm = Console.readInteger("Select a payment mean:\n");
@@ -91,6 +90,11 @@ public class ExpenseRegisterUI extends BaseUI {
     @Override
     public void header() {
         System.out.println("---REGISTER AN EXPENSE---");
+    }
+
+    @Override
+    protected BaseController controller() {
+        return controller;
     }
 }
 

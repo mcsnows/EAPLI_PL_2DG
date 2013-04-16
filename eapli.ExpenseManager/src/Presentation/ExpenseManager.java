@@ -6,7 +6,9 @@ package Presentation;
 
 import eapli.ExpenseBootStrapper;
 import eapli.ExpenseTypeBootStrapper;
+import eapli.IncomeBootStrapper;
 import eapli.IncomeTypeBootStrapper;
+import eapli.PaymentMeansBootStrapper;
 
 /**
  *
@@ -21,6 +23,8 @@ public class ExpenseManager {
             ExpenseBootStrapper boot=new ExpenseBootStrapper();
             ExpenseTypeBootStrapper bootType = new ExpenseTypeBootStrapper();
             IncomeTypeBootStrapper bootIncomeType = new IncomeTypeBootStrapper();
+            IncomeBootStrapper bootIncome = new IncomeBootStrapper();
+            PaymentMeansBootStrapper bootmeans = new PaymentMeansBootStrapper();
             MainMenu menu = new MainMenu();
             menu.mainLoop();
       }

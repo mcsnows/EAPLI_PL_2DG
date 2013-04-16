@@ -21,17 +21,17 @@ import java.util.List;
  *
  * @author Jose Nuno Loureiro
  */
-public class ExpenseRegisterController {
+public class ExpenseRegisterController extends BaseController{
       public ExpenseRegisterController() {
       }
 
-      public void registerExpense(String desc, Calendar date, BigDecimal amount, ExpenseType type) {
+      public void registerExpense(String desc, Date date, BigDecimal amount, ExpenseType type) {
             Expense expense = new Expense(desc, date, amount, type);
             IExpenseRepository controller= Persistence.PersistenceRegistry.getInstance().expenseRepository();
             controller.saveExpense(expense);
       }
       
-      public void registerExpense(String desc, Calendar date, BigDecimal amount, PaymentMean mean, ExpenseType type) {
+      public void registerExpense(String desc, Date date, BigDecimal amount, PaymentMean mean, ExpenseType type) {
             Expense expense = new Expense(desc, date, amount, mean, type);
             IExpenseRepository controller= Persistence.PersistenceRegistry.getInstance().expenseRepository();
             controller.saveExpense(expense);
