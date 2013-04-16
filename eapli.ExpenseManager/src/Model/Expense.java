@@ -53,6 +53,9 @@ public class Expense {
         }
         this.description = exp.description;
         this.amount = exp.amount;
+        this.paymentMean = paymentMean;
+        this.dateOcurred = dateOcurred;
+        this.type=type;
     }
 
     public Expense(String description, Calendar dateOccurred, BigDecimal amount, ExpenseType type) {
