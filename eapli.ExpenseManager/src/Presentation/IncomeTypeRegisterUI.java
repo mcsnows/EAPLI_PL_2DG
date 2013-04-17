@@ -22,6 +22,7 @@ public class IncomeTypeRegisterUI extends BaseUI{
           public IncomeTypeRegisterUI() {
       }
 
+      @Override
       public void run() {
 
             List<IncomeType> listIncomeType = controller.getAllIncomeType();
