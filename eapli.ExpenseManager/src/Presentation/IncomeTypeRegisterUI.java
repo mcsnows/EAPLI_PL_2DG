@@ -5,6 +5,7 @@
 package Presentation;
 
 
+import Controllers.BaseController;
 import Controllers.IncomeTypeRegisterController;
 import Model.IncomeType;
 import eapli.util.Console;
@@ -14,9 +15,11 @@ import java.util.List;
  *
  * @author Nuno
  */
-public class IncomeTypeRegisterUI {
+public class IncomeTypeRegisterUI extends BaseUI{
+     
           private IncomeTypeRegisterController controller = new IncomeTypeRegisterController();
-      public IncomeTypeRegisterUI() {
+     
+          public IncomeTypeRegisterUI() {
       }
 
       public void run() {
@@ -33,4 +36,14 @@ public class IncomeTypeRegisterUI {
 
             System.out.println("Income type recorded.");
       }
+
+    @Override
+    protected BaseController controller() {
+        return controller;
+    }
+
+    @Override
+    public void header() {
+        System.out.println("---INCOME TYPES---");
+    }
 }
