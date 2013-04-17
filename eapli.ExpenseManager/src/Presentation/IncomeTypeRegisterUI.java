@@ -16,10 +16,13 @@ import java.util.List;
  * @author Nuno
  */
 public class IncomeTypeRegisterUI extends BaseUI{
+     
           private IncomeTypeRegisterController controller = new IncomeTypeRegisterController();
+     
           public IncomeTypeRegisterUI() {
       }
 
+      @Override
       public void run() {
 
             List<IncomeType> listIncomeType = controller.getAllIncomeType();
@@ -37,11 +40,11 @@ public class IncomeTypeRegisterUI extends BaseUI{
 
     @Override
     protected BaseController controller() {
-      return controller;
+        return controller;
     }
 
     @Override
     public void header() {
-        System.out.println("* * * INCOME TYPE REGISTER UI * * *");
+        System.out.println("---INCOME TYPES---");
     }
 }
