@@ -34,7 +34,7 @@ public class Income {
         }
         this.description = description;
         this.amount = amount;
-        this.dateOccurred = this.dateOccurred;
+        this.dateOccurred = dateOccurred;
         this.type=type;
     }
     
@@ -48,5 +48,5 @@ public class Income {
                 + "\n "+ type;
         return s;
     }
-    
+
 }
