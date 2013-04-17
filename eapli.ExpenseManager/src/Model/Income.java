@@ -7,6 +7,7 @@ package Model;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -17,13 +18,13 @@ public class Income {
     
     private String description;
     private BigDecimal amount;
-    private Calendar dateOcurred;
+    private Date dateOccurred;
     private IncomeType type;
     
     protected Income(){
     }
     
-    public Income(String description, Calendar dateOccurred, BigDecimal amount, IncomeType type) {
+    public Income(String description, Date dateOccurred, BigDecimal amount, IncomeType type) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -33,7 +34,7 @@ public class Income {
         }
         this.description = description;
         this.amount = amount;
-        this.dateOcurred = dateOcurred;
+        this.dateOccurred = dateOccurred;
         this.type=type;
     }
     
@@ -43,9 +44,9 @@ public class Income {
         double doubleAmount = this.amount.doubleValue();
         String s = "Description: " + this.description
                 + "\nAmount: " + n.format(doubleAmount)  
-                +"\nDate: " + dateOcurred
+                +"\nDate: " + dateOccurred
                 + "\n "+ type;
         return s;
     }
-    
+
 }

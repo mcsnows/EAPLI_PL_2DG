@@ -14,18 +14,19 @@ import java.util.List;
  *
  * @author i110459
  */
-public class GivenMonthExpensesController {
+public class GivenMonthExpensesController extends BaseController{
     
-    public List<Expense> getMonthlyExpenses(String date){
+    public List<Expense> getMonthlyExpensesList(String date){
         ExpenseRepository repo=new ExpenseRepository();
         ExpenseRecord ER=new ExpenseRecord(repo.getAllExpenses());
-        return ER.getMonthlyExpenses(date);
+        return ER.getMonthlyExpensesList(date);
     }
     
-    public List<Expense> getFMonthlyExpenses(ExpenseType type,String date){
+    public List<Expense> getFMonthlyExpensesList(ExpenseType type,String date){
         ExpenseRepository repo=new ExpenseRepository();
         return null;
     }
     
     
 }
+

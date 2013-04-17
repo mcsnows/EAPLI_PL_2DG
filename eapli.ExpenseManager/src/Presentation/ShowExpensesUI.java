@@ -34,6 +34,10 @@ public class ShowExpensesUI {
                                 Expense expense = controller.getLastExpense();
                               System.out.println("Last Expense\n"+expense);
                               break;
+                        case 3:
+                                GivenMonthExpensesUI gmeUI=new GivenMonthExpensesUI();
+                                gmeUI.run();
+                                break;
                         default:
                               System.out.println("Wrong option. Please repeat");
                               break;
@@ -45,6 +49,7 @@ public class ShowExpensesUI {
             System.out.println("* * *  SHOW EXPENSES  * * *\n");
             System.out.println("1. All expenses");
             System.out.println("2. Last expense");
+            System.out.println("3. Show month expenses");
             System.out.println("0. End show expenses\n\n");
             int op = Console.readInteger("Choose an option");
             return op;

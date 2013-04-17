@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.CalculateBalanceController;
 import Controllers.IncomeRegisterController;
 import Model.IncomeType;
@@ -11,16 +12,18 @@ import eapli.util.Console;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author Outsider
  */
-public class IncomeRegisterUI extends BaseUI{
-    
+public class IncomeRegisterUI extends BaseUI {
+
     public IncomeRegisterUI() {
     }
+    IncomeRegisterController controller = new IncomeRegisterController();
 
     public void run() {
 
@@ -30,17 +33,17 @@ public class IncomeRegisterUI extends BaseUI{
         int month = Console.readInteger("Month (1-12):\n");
         int day = Console.readInteger("Day:\n");
 
-        Calendar date = DateTime.newCalendarDate(year, month, day); // Date do tipo Calendar
+        Date date = Console.readDate("Date (dd-mm-yyyy): ");
 
+        
         double value = Console.readDouble("Amount:\n"); //valor do rendimento
         BigDecimal amount = new BigDecimal(value);
-        IncomeRegisterController controller = new IncomeRegisterController();
 
         displayListIncomeType(controller.getIncomeTypes()); //listar os tipos de rendimento
 
         int position = Console.readInteger("Select an income type:\n");
         IncomeType type = controller.getIncomeTypes().get(position - 1);
-       
+
         controller.registerIncome(desc, date, amount, type); //regista o rendimento
 
         CalculateBalanceController calculate = new CalculateBalanceController();
@@ -59,12 +62,14 @@ public class IncomeRegisterUI extends BaseUI{
             System.out.println(i + " --> " + type);
         }
     }
-    
+
     @Override
     public void header() {
         System.out.println("---REGISTER AN INCOME---");
-    } 
+    }
 
-    
-    
+    @Override
+    protected BaseController controller() {
+        return controller;
+    }
 }

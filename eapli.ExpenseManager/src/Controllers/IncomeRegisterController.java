@@ -10,17 +10,18 @@ import Persistence.IIncomeRepository;
 import Persistence.IIncomeTypeRepository;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author José Nuno Loureiro
  */
-public class IncomeRegisterController {
+public class IncomeRegisterController extends BaseController{
      public IncomeRegisterController() {
       }
 
-      public void registerIncome(String desc, Calendar date, BigDecimal amount, IncomeType type) {
+      public void registerIncome(String desc, Date date, BigDecimal amount, IncomeType type) {
             Income income = new Income(desc, date, amount, type);
             IIncomeRepository controller= Persistence.PersistenceRegistry.getInstance().incomeRepository();
             controller.saveIncome(income);
