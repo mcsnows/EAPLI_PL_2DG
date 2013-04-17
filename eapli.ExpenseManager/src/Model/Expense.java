@@ -22,7 +22,7 @@ public class Expense {
     private String description;
     private BigDecimal amount;
     private PaymentMean paymentMean;
-    private Date dateOcurred;
+    private Date dateOccurred;
     private ExpenseType type;
     
 
@@ -39,7 +39,7 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
-        this.dateOcurred = dateOcurred;
+        this.dateOccurred = dateOccurred;
     }
 
 //antiga data calendar
@@ -54,7 +54,7 @@ public class Expense {
         this.description = exp.description;
         this.amount = exp.amount;
         this.paymentMean = exp.paymentMean;
-        this.dateOcurred = exp.dateOcurred;
+        this.dateOccurred = exp.dateOccurred;
         this.type=exp.type;
     }
 
@@ -68,7 +68,7 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
-        this.dateOcurred = dateOcurred;
+        this.dateOccurred = dateOccurred;
         this.type=type;
     }
     
@@ -83,7 +83,7 @@ public class Expense {
         this.description = description;
         this.amount = amount;
         this.paymentMean = paymentMean;
-        this.dateOcurred = dateOcurred;
+        this.dateOccurred = dateOccurred;
         this.type=type;
     }
     
@@ -94,14 +94,14 @@ public class Expense {
         String s = "Description: " + this.description
                 + "\nAmount: " + n.format(doubleAmount)  
                 + "\n" + paymentMean
-                +"\nDate: " + dateOcurred
+                +"\nDate: " + dateOccurred
                 + "\n "+ type;
         return s;
 
     }
 
     public Date getDateOcurred() {
-        return dateOcurred;
+        return dateOccurred;
     }
 
     public BigDecimal getAmount() {
@@ -110,13 +110,13 @@ public class Expense {
     
     public int getMonth(){
         Calendar c=null;
-        c.setTime(dateOcurred);
+        c.setTime(dateOccurred);
         return c.MONTH; 
     }
     
     public int getYear(){
         Calendar c=null;
-        c.setTime(dateOcurred);
+        c.setTime(dateOccurred);
         return c.YEAR;
     }
     
