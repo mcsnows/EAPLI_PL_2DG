@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ShowExpenseTypeController extends BaseController{
     public ShowExpenseTypeController(){}
-    public List<ExpenseType> getAllExpenses() {
+    public List<ExpenseType> getAllExpenseTypes() {
             ExpenseTypeRepository repo = new ExpenseTypeRepository();
             return repo.getAllExpenseTypes();
     }
