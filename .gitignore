@@ -7,5 +7,13 @@
 /eapli.ExpenseManager/nbproject/private/
 /eapli.ExpenseManager/build/
 /eapli.ExpenseManager/dist/
+<<<<<<< HEAD
 /eapli.util/dist/
 /eapli.util/build/
+=======
+/eapli.util/nbproject/private/
+/eapli.util/dist/
+/eapli.util/build/
+/eapli.util/build/
+/eapli.util/dist/
+>>>>>>> 5e6d348eb1b7d3c2884710a1d3659b80ff3f5394

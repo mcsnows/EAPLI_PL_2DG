@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Model;
 
 /**
@@ -18,3 +19,27 @@ public abstract class PaymentMean {
 
 
 }
+=======
+package Model;
+
+public class PaymentMean {
+    
+    private String description;
+    
+    public PaymentMean(String description) {
+        this.description = description;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public String toString(){
+        return "Payment Mean: " + description;
+    }
+}
+>>>>>>> 5e6d348eb1b7d3c2884710a1d3659b80ff3f5394
