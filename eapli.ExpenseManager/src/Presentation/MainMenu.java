@@ -57,6 +57,10 @@ public class MainMenu {
                     PaymentMeanUI pm= new PaymentMeanUI();
                     pm.run();
                     break;
+                case 9:
+                    ShowIncomesUI showIncomesUI = new ShowIncomesUI();
+                    showIncomesUI.loop();
+                    break;
             }
         } while (op != 0);
 
@@ -73,6 +77,7 @@ public class MainMenu {
         System.out.println("6. Register income type");
         System.out.println("7. Register an income");
         System.out.println("8. Register Payment Mean");
+        System.out.println("9. Show Incomes");
         System.out.println("0. Exit\n\n");
 
         int option = Console.readInteger("Please choose an option");
