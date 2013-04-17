@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class IncomeTypeRegisterUI extends BaseUI{
           private IncomeTypeRegisterController controller = new IncomeTypeRegisterController();
-      public IncomeTypeRegisterUI() {
+          public IncomeTypeRegisterUI() {
       }
 
       public void run() {
